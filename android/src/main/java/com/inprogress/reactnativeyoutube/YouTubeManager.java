@@ -2,7 +2,6 @@ package com.inprogress.reactnativeyoutube;
 
 import androidx.annotation.Nullable;
 
-import com.facebook.infer.annotation.Assertions;
 import com.facebook.react.common.MapBuilder;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
@@ -46,8 +45,9 @@ public class YouTubeManager extends SimpleViewManager<YouTubeView> {
 
     @Override
     public void receiveCommand(YouTubeView view, int commandType, @Nullable ReadableArray args) {
-        Assertions.assertNotNull(view);
-        Assertions.assertNotNull(args);
+        if (view == null || args == null) {
+            throw new AssertionError();
+        }
         switch (commandType) {
             case COMMAND_SEEK_TO: {
                 view.seekTo(args.getInt(0));
