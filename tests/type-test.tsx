@@ -34,10 +34,10 @@ const YouTubeTest = () => {
       origin={'foo'}
       onError={(event) => {}}
       onReady={(event) => {}}
-      onChangeState={() => {}}
-      onChangeQuality={() => {}}
+      onChangeState={(event) => {}}
+      onChangeQuality={(event) => {}}
       onChangeFullscreen={(event) => {}}
-      onProgress={() => {}}
+      onProgress={(event) => {}}
       style={{ flex: 1 }}
     />
   );
