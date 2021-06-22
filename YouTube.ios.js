@@ -152,6 +152,18 @@ export default class YouTube extends React.Component {
     this.setState({ playerParams: parsePlayerParams(this.props) });
   }
 
+  setPlaybackRate(rate) {
+    NativeModules.YouTubeManager.setPlaybackRate(ReactNative.findNodeHandle(this), rate);
+  }
+
+  getPlaybackRate() {
+    return new Promise((resolve, reject) =>
+      NativeModules.YouTubeManager.getPlaybackRate(ReactNative.findNodeHandle(this))
+        .then(rate => resolve(rate))
+        .catch(errorMessage => reject(errorMessage))
+    );
+  }
+
   render() {
     return (
       <RCTYouTube

@@ -32,6 +32,8 @@ declare class YouTube extends React.Component<YouTubeProps> {
   getVideosIndex(): Promise<number>;
   getCurrentTime(): Promise<number>;
   getDuration(): Promise<number>;
+  getPlaybackRate(): number;
+  setPlaybackRate(rate: number): void;
   reloadIframe(): void;
 }
 
