@@ -312,7 +312,11 @@ public class YouTubePlayerController implements
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                   mYouTubePlayer.play();
+                    try {
+                        mYouTubePlayer.play();
+                    } catch (IllegalStateException e) {
+                        mYouTubeView.initPlayer();
+                    }
                 }
             }, 1);
         }

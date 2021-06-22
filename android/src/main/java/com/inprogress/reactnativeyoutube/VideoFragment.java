@@ -10,13 +10,13 @@ public class VideoFragment extends YouTubePlayerFragment {
     public VideoFragment() {}
 
 
-    public void setYoutubeView(YouTubeView youTubeView) {
+    public void setYouTubeView(YouTubeView youTubeView) {
         mYouTubeView = youTubeView;
     }
 
     public static VideoFragment newInstance(YouTubeView youTubeView) {
         VideoFragment fragment = new VideoFragment();
-        fragment.setYoutubeView(youTubeView);
+        fragment.setYouTubeView(youTubeView);
         return fragment;
     }
 
